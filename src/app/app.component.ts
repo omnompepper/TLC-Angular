@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { NgModel } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 import { CounterComponent } from './counter/counter.component';
+import { CalculatorComponent } from './calculator/calculator.component';
+import { ProductsComponent } from './products/products.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CounterComponent, FormsModule],
+  imports: [RouterOutlet,
+    CounterComponent,
+    FormsModule,
+    CalculatorComponent,
+    ProductsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'demo';
-  name = 'Clairebear';
+  name = 'Claire';
 }
