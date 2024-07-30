@@ -1,0 +1,13 @@
+<h2>My Accounts</h2>
+
+<ul class="accounts">
+    <li *ngFor="let account of accounts">
+        <!-- <button type="button" (click)="onSelect(product)"> --> 
+            <button>
+            <span class="badge">{{account.id}}</span>
+            <span class="name">{{account.name}}</span>
+            <span class="balance">{{account.balance}}</span>
+        </button>
+    </li>
+</ul>
+
