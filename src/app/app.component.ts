@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CounterComponent } from './counter/counter.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ProductsComponent } from './products/products.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,8 @@ import { ProductsComponent } from './products/products.component';
     CounterComponent,
     FormsModule,
     CalculatorComponent,
-    ProductsComponent],
+    ProductsComponent,
+    MessagesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

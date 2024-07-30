@@ -8,6 +8,7 @@ import { Observable, of } from 'rxjs';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
 import { Product } from '../product';
 import { ProductService } from '../product.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-products',
@@ -20,7 +21,8 @@ export class ProductsComponent implements OnInit{
   selectedProduct?: Product;
   products: Product[] = [];
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService,
+    private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.getProducts();
@@ -33,5 +35,6 @@ export class ProductsComponent implements OnInit{
 
   onSelect(product: Product): void {
     this.selectedProduct = product;
+    this.messageService.add(`Selected product id=${product.name}`);
   }
 }
