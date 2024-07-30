@@ -6,6 +6,7 @@ import { CounterComponent } from './counter/counter.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { ProductsComponent } from './products/products.component';
 import { MessagesComponent } from './messages/messages.component';
+import { UserComponent } from './user/user.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { MessagesComponent } from './messages/messages.component';
     FormsModule,
     CalculatorComponent,
     ProductsComponent,
-    MessagesComponent],
+    MessagesComponent,
+    UserComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

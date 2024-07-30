@@ -1,0 +1,7 @@
+<p>{{username}}</p>
+<p>Favourite Animal: {{favouriteAnimal}}</p>
+<label for="animal">
+    Favourite Animal:
+    <input id="animal" type="text" [(ngModel)]="favouriteAnimal">
+</label>
+<button (click)="showFavAnimal()">Show Animal</button>
