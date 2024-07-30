@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { CounterComponent } from './counter/counter.component';
@@ -10,6 +10,8 @@ import { ProductsComponent } from './products/products.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,
+    RouterModule,
+    RouterLink,
     CounterComponent,
     FormsModule,
     CalculatorComponent,
