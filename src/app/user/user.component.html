@@ -1,7 +1,15 @@
-<p>{{username}}</p>
-<p>Favourite Animal: {{favouriteAnimal}}</p>
+<img src="/profoak.png" alt="oak"/>
+<p>Hello there! Welcome to the world of Angular!</p>
+<p>First, what is your name?</p>
+<label for="name">
+    Name:
+    <input id="username" type="text" [(ngModel)]="username">
+</label>
+<p>Right! So your name is {{username}}!</p>
+<p>What is your favourite animal?</p>
 <label for="animal">
     Favourite Animal:
     <input id="animal" type="text" [(ngModel)]="favouriteAnimal">
 </label>
+<br/>
 <button (click)="showFavAnimal()">Show Animal</button>

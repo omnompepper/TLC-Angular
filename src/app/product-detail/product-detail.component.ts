@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NgIf, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Product } from '../product';
+import { Product } from '../models/product';
 
 @Component({
   selector: 'app-product-detail',

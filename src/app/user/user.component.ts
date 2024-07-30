@@ -10,9 +10,9 @@ import { FormsModule } from '@angular/forms';
 })
 export class UserComponent {
   username = 'Claire';
-  favouriteAnimal = '';
+  favouriteAnimal = 'Magikarp';
 
   showFavAnimal() {
-    alert(this.favouriteAnimal);
+    alert(this.username + "'s favourite animal is a " + this.favouriteAnimal);
   }
 }

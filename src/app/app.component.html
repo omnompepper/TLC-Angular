@@ -1,15 +1,15 @@
 <div>
-  <p>Hello {{name}}!!!</p>
-  <input id="name" [(ngModel)]="name" placeholder="name">
+  <h1 style="text-align: center;">🌞Welcome to Claire's Angular project!🌞</h1>
+  <p style="text-align: center;">🌷🌼🌻🌹🌻🌼🌷</p>
 </div>
 <hr/>
-<app-user></app-user>
 <hr/>
-<app-counter/>
+<nav>
+  <a routerLink="/user">Users</a>
+  <br/>
+  <a routerLink="/products">Products</a>
+</nav>
 <hr/>
-<app-calculator/>
 <hr/>
-<app-products></app-products>
-<hr/>
-<app-messages></app-messages>
 <router-outlet></router-outlet>
+<app-messages></app-messages>

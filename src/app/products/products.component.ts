@@ -6,9 +6,9 @@ import { NgIf } from '@angular/common';
 import { Observable, of } from 'rxjs';
 
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
-import { Product } from '../product';
-import { ProductService } from '../product.service';
-import { MessageService } from '../message.service';
+import { Product } from '../models/product';
+import { ProductService } from '../services/product.service';
+import { MessageService } from '../services/message.service';
 
 @Component({
   selector: 'app-products',
