@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { MessageService } from './message.service';
 import { Account } from '../models/account';
-import { Observable, catchError, of } from 'rxjs';
-import { ACCOUNTS } from '../models/mock-acounts';
+import { Observable, catchError } from 'rxjs';
 
 import { environment } from '../environments/environments';
 import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +19,6 @@ export class AccountService {
   
   getAccounts(): Observable<Account[]> {
     this.log('Fetched accounts!');
-    //return of(ACCOUNTS);
     const url = this.buildUrl(AccountService.ACCOUNTS_PATH);
     return this.http.get<Account[]>(url);
   }
@@ -29,10 +28,11 @@ export class AccountService {
     return this.http.get<Account>(url);
   }
 
-  saveAccount(account : Account): void {
+  saveAccount(account : Account): Observable<string> {
+    this.log("Saving account with id:" + account.id + " name:" + account.name + " balance:" + account.balance);
     const url = this.buildUrl(AccountService.ACCOUNTS_PATH);
-    this.http.post<any>(url, account)
-    .pipe(this.handleError);
+    return this.http.post<any>(url, account)
+      .pipe(catchError(this.handleError));
   }
 
   /** Log an AccountService message with the MessageService */
@@ -45,7 +45,6 @@ export class AccountService {
   }
 
   private handleError(error: any): Observable<never> {
-    throw new Error('Oops!!');
+    throw new Error('Oops!! Something went wrong!');
   }
-
 }

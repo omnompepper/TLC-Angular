@@ -1,0 +1,13 @@
+<div class="form-container">
+
+    <label for="name">
+        Name:
+        <input id="name" type="text" placeholder="NAME" [(ngModel)]="account.name">
+    </label>
+    <label for="balance">
+        Balance:
+        <input id="balance" type="number" placeholder="0.00" [(ngModel)]="account.balance">
+    </label>
+
+    <button (click)="onSubmit()">Add Account</button>
+</div>
