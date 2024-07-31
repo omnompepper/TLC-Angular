@@ -13,7 +13,12 @@ export class ProductService {
 
   getProducts(): Observable<Product[]> {
     const products = of(PRODUCTS);
-    this.messageService.add('Fetched some products!');
+    this.log('Fetched products!');
     return products;
   }
+
+    /** Log a ProductService message with the MessageService */
+    private log(message: string) {
+      this.messageService.add(`ProductService: ${message}`);
+    }
 }

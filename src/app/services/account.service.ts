@@ -3,6 +3,7 @@ import { MessageService } from './message.service';
 import { Account } from '../models/account';
 import { Observable, of } from 'rxjs';
 import { ACCOUNTS } from '../models/mock-acounts';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +13,12 @@ export class AccountService {
   
   getAccounts(): Observable<Account[]> {
     const accounts = of(ACCOUNTS);
-    this.messageService.add('Fetched accounts!');
+    this.log('Fetched accounts!');
     return accounts;
+  }
+
+  /** Log an AccountService message with the MessageService */
+  private log(message: string) {
+    this.messageService.add(`AccountService: ${message}`);
   }
 }
