@@ -30,4 +30,5 @@ export class AccountsComponent implements OnInit{
     this.accountService.getAccounts()
     .subscribe((accounts: any) => this.accounts = accounts);
   }
+
 }
