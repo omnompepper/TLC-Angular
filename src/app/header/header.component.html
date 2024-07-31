@@ -1,0 +1,44 @@
+<mat-toolbar color="primary">
+  <span class="fill-remaining-space">
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      #menuTrigger="matMenuTrigger"
+      (mouseover)="menuTrigger.openMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <span (mouseleave)="menuTrigger.closeMenu()">
+        <button mat-menu-item routerLink="/">
+          <mat-icon>home</mat-icon>
+          <span>Home</span>
+        </button>
+        <button mat-menu-item routerLink="/accounts">
+          <mat-icon>currency_exchange</mat-icon>
+          <span>Accounts</span>
+        </button>
+        <button mat-menu-item routerLink="/accountform">
+          <mat-icon>person_add</mat-icon>
+          <span>Add new account</span>
+        </button>
+        <button mat-menu-item routerLink="/calculator">
+          <mat-icon>calculate</mat-icon>
+          <span>Calculator</span>
+        </button>
+        <button mat-menu-item routerLink="/counter">
+          <mat-icon>summarize</mat-icon>
+          <span>Counter</span>
+        </button>
+        <button mat-menu-item routerLink="/products">
+          <mat-icon>work</mat-icon>
+          <span>Products</span>
+        </button>
+        <button mat-menu-item routerLink="/user">
+          <mat-icon>person</mat-icon>
+          <span>User</span>
+        </button>
+      </span>
+    </mat-menu>
+  </span>
+  <span class="fill-remaining-space">🌞Welcome to Claire's Angular project!🌞</span>
+</mat-toolbar>
