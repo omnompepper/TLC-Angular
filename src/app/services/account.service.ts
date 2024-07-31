@@ -24,6 +24,11 @@ export class AccountService {
     return this.http.get<Account[]>(url);
   }
 
+  getAccountById(id:number): Observable<Account>{
+    const url = this.buildUrl(AccountService.ACCOUNTS_PATH) + '/' + id;
+    return this.http.get<Account>(url);
+  }
+
   saveAccount(account : Account): void {
     const url = this.buildUrl(AccountService.ACCOUNTS_PATH);
     this.http.post<any>(url, account)
