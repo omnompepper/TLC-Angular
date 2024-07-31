@@ -14,7 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu'; 
-
+import { NgStyle } from '@angular/common';
 import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
 
 
@@ -27,7 +27,8 @@ import { RouterOutlet, RouterModule, RouterLink } from '@angular/router';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    NgStyle
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'

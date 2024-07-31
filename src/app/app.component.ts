@@ -8,6 +8,7 @@ import { ProductsComponent } from './products/products.component';
 import { MessagesComponent } from './messages/messages.component';
 import { UserComponent } from './user/user.component';
 import { HeaderComponent } from './header/header.component';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,8 @@ import { HeaderComponent } from './header/header.component';
     ProductsComponent,
     MessagesComponent,
     UserComponent,
-    HeaderComponent],
+    HeaderComponent,
+  NgStyle],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
