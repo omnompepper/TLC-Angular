@@ -6,6 +6,7 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { AccountformComponent } from './accountform/accountform.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { CounterComponent } from './counter/counter.component';
+import { ClairetestComponent } from './clairetest/clairetest.component';
 import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
@@ -15,6 +16,7 @@ export const routes: Routes = [
     { path: 'accountform', component: AccountformComponent },
     { path: 'calculator', component: CalculatorComponent },
     { path: 'counter', component: CounterComponent },
+    { path: 'clairetest', component: ClairetestComponent },
     {path: '', component: HomeComponent}
 ];
 
