@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatCardModule } from '@angular/material/card';
-import { MatSortModule, Sort } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
+import { MatSortModule, MatSort } from '@angular/material/sort';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 
-import { Account } from '../models/account';
 import { AccountService } from '../services/account.service';
 
 @Component({
@@ -12,50 +11,27 @@ import { AccountService } from '../services/account.service';
   standalone: true,
   imports: [MatCardModule, MatSortModule, MatTableModule],
   templateUrl: './accounts.component.html',
-  styleUrl: './accounts.component.css'
+  styleUrl: './accounts.component.css',
 })
-export class AccountsComponent implements OnInit{
+export class AccountsComponent implements OnInit {
+  public accounts = new MatTableDataSource();
   public displayedColumns: string[] = ['id', 'name', 'balance'];
-  
-  accounts: Account[] = [];
 
-  constructor(private accountService: AccountService) { }
+  constructor(private accountService: AccountService) {}
+
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngOnInit(): void {
     this.getAccounts();
   }
 
+  ngAfterViewInit() {
+    this.accounts.sort = this.sort;
+  }
+
   getAccounts(): void {
-    this.accountService.getAccounts()
-    .subscribe((accounts: any) => {
-      this.accounts = accounts;
+    this.accountService.getAccounts().subscribe((accounts: any) => {
+      this.accounts = new MatTableDataSource(accounts);
     });
   }
-
-  sortAccountData(sort: Sort) {
-    const data = this.accounts.slice();
-    if (!sort.active || sort.direction === '') {
-      this.accounts = data;
-      return;
-    }
-
-    this.accounts = data.sort((a, b) => {
-      const isAsc = sort.direction === 'asc';
-      switch (sort.active) {
-        case 'name':
-          return compare(a.name, b.name, isAsc);
-        case 'id':
-          return compare(a.id, b.id, isAsc);
-        case 'balance':
-          return compare(a.balance, b.balance, isAsc);
-        default:
-          console.log("default");
-          return 0;
-      }
-    });
-  }
-}
-
-function compare(a: number | string, b: number | string, isAsc: boolean) {
-  return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }

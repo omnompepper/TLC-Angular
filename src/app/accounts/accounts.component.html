@@ -4,13 +4,7 @@
   </mat-card-header>
   <br />
   <mat-card-content>
-    <table
-      mat-table
-      [dataSource]="accounts"
-      class="mat-elevation-z8"
-      matSort
-      (matSortChange)="sortAccountData($event)"
-    >
+    <table mat-table [dataSource]="accounts" class="mat-elevation-z8" matSort>
       <!-- Id Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
