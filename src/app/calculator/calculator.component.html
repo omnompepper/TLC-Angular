@@ -1,11 +1,33 @@
-<h1>Simple Calculator</h1>
-<div>
-    <input [(ngModel)]="amount">
-    <br/>
-    <button (click)="add()">Add</button>
-    <button (click)="subtract()">Sub</button>
-    <button (click)="div()">Div</button>
-    <button (click)="mult()">Mult</button>
-    <br/>
-    Total is: {{total}}
-</div>
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Simple Calculator</mat-card-title>
+  </mat-card-header>
+  <br />
+  <mat-card-content>
+    <div>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Enter a number</mat-label>
+        <input matInput [(ngModel)]="amount" />
+      </mat-form-field>
+      <br />
+      <div class="example-button-row">
+        <button mat-mini-fab (click)="add()">
+          <mat-icon>add</mat-icon>
+        </button>
+        <button mat-mini-fab (click)="subtract()">
+          <mat-icon>remove</mat-icon>
+        </button>
+        <button mat-mini-fab (click)="div()">
+          <mat-icon>percent</mat-icon>
+        </button>
+        <button mat-mini-fab (click)="mult()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+      <br />
+      <mat-divider></mat-divider>
+      <br />
+      Total is: {{ total }}
+    </div>
+  </mat-card-content>
+</mat-card>
