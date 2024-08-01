@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MatTableModule } from '@angular/material/table';
+import { MatCardModule } from '@angular/material/card';
 import { MatSortModule, Sort } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 
 import { Account } from '../models/account';
 import { AccountService } from '../services/account.service';
@@ -9,8 +10,7 @@ import { AccountService } from '../services/account.service';
 @Component({
   selector: 'app-accounts',
   standalone: true,
-  imports: [MatTableModule,
-    MatSortModule],
+  imports: [MatCardModule, MatSortModule, MatTableModule],
   templateUrl: './accounts.component.html',
   styleUrl: './accounts.component.css'
 })
