@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgStyle } from '@angular/common';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatSortModule, MatSort, Sort } from '@angular/material/sort';
@@ -17,7 +18,7 @@ const ACCOUNT_DATA: Account[] = [
 @Component({
   selector: 'app-clairetest',
   standalone: true,
-  imports: [MatCardModule, MatSortModule, MatTableModule, MatSort],
+  imports: [MatCardModule, MatSortModule, MatTableModule, MatSort, NgStyle],
   templateUrl: './clairetest.component.html',
   styleUrl: './clairetest.component.css',
 })
