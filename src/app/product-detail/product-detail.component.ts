@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NgIf, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Product } from '../models/product';
+import { ProductData } from '../models/productdata';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,5 +13,5 @@ import { Product } from '../models/product';
 })
 
 export class ProductDetailComponent {
-  @Input() product?: Product;
+  @Input() productData?: ProductData;
 }

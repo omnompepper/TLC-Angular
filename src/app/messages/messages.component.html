@@ -1,3 +1,16 @@
-<h4>Messages</h4>
-<button mat-stroked-button (click)="messageService.clear()">Clear</button>
-<div *ngFor="let message of messageService.messages">{{message}}</div>
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>Messages</mat-card-title>
+  </mat-card-header>
+  <br />
+  <mat-card-content>
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+      <div *ngFor="let message of messageService.messages" class="example-item">
+        {{ message }}
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-stroked-button (click)="messageService.clear()">Clear</button> 
+  </mat-card-actions>
+</mat-card>

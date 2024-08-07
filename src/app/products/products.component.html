@@ -1,14 +1,13 @@
 <h4>My Products</h4>
 
 <ul class="products">
-    <li *ngFor="let product of products">
+    <li *ngFor="let product of productData">
         <!-- <button type="button" (click)="onSelect(product)"> -->
         <button [class.selected]="product === selectedProduct" type="button" (click)="onSelect(product)">
-            <span class="badge">{{product.id}}</span>
-            <span class="name">{{product.name}}</span>
+            <span class="badge">{{product.TICKER}}</span>
+            <span class="name">{{product.TICKER}}</span>
         </button>
     </li>
 </ul>
 
-<app-product-detail [product]="selectedProduct"></app-product-detail>
-
+<app-product-detail [productData]="selectedProduct"></app-product-detail>
