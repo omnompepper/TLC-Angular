@@ -1,26 +1,23 @@
 <mat-card appearance="outlined">
-    <mat-card-title class="producttitle">
-        Products
-    </mat-card-title>
-    <mat-card-content>
-        <mat-grid-list cols="2" rowHeight="2:1">
-            <mat-grid-tile class="left-align-forced">
-                <ul class="left-align-forced" class="products">
-                    <li *ngFor="let product of productData; let  i = index">
-                      <button
-                        [class.selected]="product === selectedProduct"
-                        type="button"
-                        (click)="onSelect(product)"
-                      >
-                        <span class="badge">{{ i }}</span>
-                        <span class="name">{{ product.TICKER }}</span>
-                      </button>
-                    </li>
-                  </ul>
-            </mat-grid-tile>
-            <mat-grid-tile>
-                <app-product-detail [productData]="selectedProduct"></app-product-detail>
-            </mat-grid-tile>
-          </mat-grid-list>
-    </mat-card-content>
+  <mat-card-title class="producttitle">Products</mat-card-title>
+  <mat-card-content>
+    <div style="width: 100%">
+      <div style="width: 15em; float: left">
+        <ul class="left-align-forced" class="products">
+          <li *ngFor="let product of productData; let i = index">
+            <button
+              [class.selected]="product === selectedProduct"
+              type="button"
+              (click)="onSelect(product)">
+              <span class="badge">{{ i }}</span>
+              <span class="name">{{ product.TICKER }}</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <app-product-detail [productData]="selectedProduct"></app-product-detail>
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>
