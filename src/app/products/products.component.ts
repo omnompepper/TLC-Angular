@@ -8,6 +8,7 @@ import { ProductData } from '../models/productdata';
 import { ProductService } from '../services/product.service';
 import { MessageService } from '../services/message.service';
 import { MatCardModule } from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
 
 @Component({
   selector: 'app-products',
@@ -18,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
     ProductDetailComponent,
     MatCardModule,
     MatGridListModule,
+    MatDividerModule
   ],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css',
