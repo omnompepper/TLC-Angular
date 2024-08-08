@@ -4,6 +4,7 @@
     list-style-type: none;
     padding: 0;
     width: 15em;
+    
   }
   
   .products li {
@@ -63,4 +64,12 @@
   
   .products .name {
     align-self: center;
+  }
+
+  .producttitle {
+    margin: 10px;
+  }
+
+  .left-align-forced {
+    width:100%;
   }

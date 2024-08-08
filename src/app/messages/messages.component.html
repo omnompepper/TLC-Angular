@@ -2,15 +2,16 @@
   <mat-card-header>
     <mat-card-title>Messages</mat-card-title>
   </mat-card-header>
-  <br />
+  <br/>
   <mat-card-content>
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
       <div *ngFor="let message of messageService.messages" class="example-item">
         {{ message }}
+        {{ virtualScrollViewport?.scrollToIndex(messageService.messages.length) }}
       </div>
     </cdk-virtual-scroll-viewport>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-stroked-button (click)="messageService.clear()">Clear</button> 
+    <button mat-stroked-button (click)="messageService.clear()">Clear</button>
   </mat-card-actions>
 </mat-card>

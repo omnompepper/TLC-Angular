@@ -1,13 +1,8 @@
 <div *ngIf="productData">
-
-    <h4>{{productData.TICKER | uppercase}} Details</h4>
-    Want to buy?
-    <div><span>ask price: </span>{{productData.ASK_PRICE}}</div>
-    <div><span>buy limit: </span>{{productData.BUY_LIMIT}}</div>
-    Want to sell?
-    <div><span>ask price: </span>{{productData.ASK_PRICE}}</div>
-    <div><span>sell limit: </span>{{productData.SELL_LIMIT}}</div>
-    
-
-
-  </div>
+  <h4>{{ productData.TICKER | uppercase }} Details</h4>
+  <div><span>Ask Price: </span>{{ productData.ASK_PRICE }}</div>
+  <div><span>Buy Limit: </span>{{ productData.BUY_LIMIT }}</div>
+  <div><span>Bid Price: </span>{{ productData.BID_PRICE }}</div>
+  <div><span>Sell Limit: </span>{{ productData.SELL_LIMIT }}</div>
+  <div><span>Last Traded Price: </span>{{ productData.LAST_TRADED_PRICE }}</div>
+</div>

@@ -1,13 +1,26 @@
-<h4>My Products</h4>
-
-<ul class="products">
-    <li *ngFor="let product of productData">
-        <!-- <button type="button" (click)="onSelect(product)"> -->
-        <button [class.selected]="product === selectedProduct" type="button" (click)="onSelect(product)">
-            <span class="badge">{{product.TICKER}}</span>
-            <span class="name">{{product.TICKER}}</span>
-        </button>
-    </li>
-</ul>
-
-<app-product-detail [productData]="selectedProduct"></app-product-detail>
+<mat-card appearance="outlined">
+    <mat-card-title class="producttitle">
+        Products
+    </mat-card-title>
+    <mat-card-content>
+        <mat-grid-list cols="2" rowHeight="2:1">
+            <mat-grid-tile class="left-align-forced">
+                <ul class="left-align-forced" class="products">
+                    <li *ngFor="let product of productData; let  i = index">
+                      <button
+                        [class.selected]="product === selectedProduct"
+                        type="button"
+                        (click)="onSelect(product)"
+                      >
+                        <span class="badge">{{ i }}</span>
+                        <span class="name">{{ product.TICKER }}</span>
+                      </button>
+                    </li>
+                  </ul>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <app-product-detail [productData]="selectedProduct"></app-product-detail>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </mat-card-content>
+</mat-card>
